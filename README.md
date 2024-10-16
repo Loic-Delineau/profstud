@@ -1,7 +1,7 @@
 # EPFL Profitability Study - profistudy
 
 <p align="center">
-    <img src="images/logo.png">
+    <img src="images/patch.png">
 </p>
 
 ### v0.0.1 - Author

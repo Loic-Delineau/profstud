@@ -1,0 +1,66 @@
+#!/bin/bash
+# HEADER =========================================================================
+# Author:	Loïc Delineau
+# Date:		16/10/2024
+# Platform : 	Linux & WSL2 (Ubuntu 24.04)
+# Description: 	Adds all of profstud's aliases to your ~/.bashrc
+
+# GLOBAL VARIABLES ===============================================================
+# tput setaf colours
+#
+# Color       #define       Value       RGB
+# black     COLOR_BLACK       0     0, 0, 0
+# red       COLOR_RED         1     max,0,0
+# green     COLOR_GREEN       2     0,max,0
+# yellow    COLOR_YELLOW      3     max,max,0
+# blue      COLOR_BLUE        4     0,0,max
+# magenta   COLOR_MAGENTA     5     max,0,max
+# cyan      COLOR_CYAN        6     0,max,max
+# white     COLOR_WHITE       7     max,max,max
+
+black=0
+red=1
+green=2
+yellow=3
+blue=4
+magenta=5
+cyan=6
+white=7
+
+# PATH VARIABLES =====================================================
+current_path=`pwd`
+cd ..
+
+# Returns to current path
+cd $current_path
+
+# PROFSTUD =============================================================
+echo "" >> ~/.bashrc
+echo ""
+echo "profstud - prints the name & function of all profstud aliases"
+echo "# PROFSTUD ALIASES - https://github.com/loic-delineau/profstud" >> ~/.bashrc
+echo "alias profstud=\"cd $current_path && bash profstud_aliases\"" >> ~/.bashrc
+
+# PROFSTUD-EDIT =======================================================
+echo "profstud-edit - edits dataset of profstud"
+echo "alias profstud-edit=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
+
+# PROFSTUD-HOST =======================================================
+echo "profstud-host - hosts local webpage displaying all data"
+echo "alias profstud-host=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
+echo "" >> ~/.bashrc
+
+# USER END MESSAGE ===================================================
+echo "$(tput setaf $yellow)"
+echo "Don't forget to run the following command to start all aliases"
+echo "source ~/.bashrc"
+
+# Returns to current path
+cd $current_path
+
+# End Message
+echo "$(tput setaf $green)"
+echo "Successful execution, stopping script!"
+echo "$(tput setaf $white)"
+ 
+

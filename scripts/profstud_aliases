@@ -1,0 +1,14 @@
+#!/bin/bash
+# HEADER =========================================================================
+# Author:       Loïc Delineau
+# Date:         16/10/2024
+# Platform :    WSL2 & Linux (Ubuntu 24.04)
+# Description:  Lists all of profstud aliases
+
+echo ""
+echo "profstud      - prints the name & function of all profstud aliases"
+echo "profstud-edit - edits dataset of profstud"
+echo "profstud-host - hosts local webpage displaying all data"
+echo ""
+
+

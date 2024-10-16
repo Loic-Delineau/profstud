@@ -1,0 +1,107 @@
+#!/bin/bash
+# HEADER =========================================================================
+# Author:	Loïc Delineau
+# Date:		16/10/2024
+# Platform : 	Linux & WSL2 (Ubuntu 24.04)
+# Description: 	Installs all the necessary packages for profstud
+
+# GLOBAL VARIABLES ===============================================================
+# tput setaf colours
+#
+# Color       #define       Value       RGB
+# black     COLOR_BLACK       0     0, 0, 0
+# red       COLOR_RED         1     max,0,0
+# green     COLOR_GREEN       2     0,max,0
+# yellow    COLOR_YELLOW      3     max,max,0
+# blue      COLOR_BLUE        4     0,0,max
+# magenta   COLOR_MAGENTA     5     max,0,max
+# cyan      COLOR_CYAN        6     0,max,max
+# white     COLOR_WHITE       7     max,max,max
+
+black=0
+red=1
+green=2
+yellow=3
+blue=4
+magenta=5
+cyan=6
+white=7
+
+# FUNCTIONS ======================================================================
+# Wait for user confirmation (y) to continue or (n) to quit
+prompt() {
+	
+	echo "Continue by entering 'y', stop the script by pressing 'n'"
+
+	# Failsafe for wrong value inputted
+	fail="1"
+
+	while [[ "$fail" == "1" ]]; do
+		
+		# Read 1 input char
+		echo -n "> "
+		read -n 1 -r cmd < /dev/tty
+
+		# Keyboard input checking
+		if [[ "$cmd" == "y" ]]; then
+			fail="0"
+			echo ""
+		elif [[ "$cmd" == "n" ]]; then
+			echo ""
+			exit
+		else
+			echo -e "\nUnknown key..."
+		fi
+done
+}
+
+# USER SYSTEM IDENTIFICATION =====================================================
+# Checking if you are running this in Linux or WSL2
+if `uname -r | grep -q WSL2`; then
+	echo "You are running WSL2"
+	OS=WSL2
+elif `uname -r | grep -q generic`; then
+	echo "You are running Bare Metal Linux"
+	OS=LINUX
+else 
+	echo "You are not running Linux, this script won't work"
+	echo "Killing script, please get off your proprietary OS"
+	exit
+fi
+
+echo ""
+
+# USER RECAP ======================================================================
+# Summary of all the packages that will be installed
+echo "Here are all the packages that will be installed"
+echo ""
+echo "| Package Name             | Package Size (Mb) | Package Purpose     |"
+echo "| ------------------------------------------------------------------ |"
+echo "| build-essential          |     0Mb           | gcc                 |"
+echo "| gnuplot-x11              |    24Mb           | plotting lib        |"
+#echo "|                          |     Mb            |                     |" 
+echo "|                                                                    |" 
+echo "|                   TOTAL:      24Mb                                 |" 
+echo "| ------------------------------------------------------------------ |"
+echo ""
+prompt
+
+
+# INSTALLATION ======================================================================
+sudo apt install build-essential -y
+sudo apt install gnuplot-x11 -y
+
+
+# Safety Messages
+echo "$(tput setaf $green)"
+
+# End Message
+echo "Successful execution, stopping script!"
+echo "$(tput setaf $white)"
+ 
+
+
+
+
+
+

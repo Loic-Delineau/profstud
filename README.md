@@ -40,7 +40,8 @@ Make a [Personal Access Token](https://github.com/settings/tokens) if you need a
 
 ### Run once to install all dependencies
 ```
-cd profstud
+cd profstud/scripts
+./install
 ./install_aliases
 ```
 <br>

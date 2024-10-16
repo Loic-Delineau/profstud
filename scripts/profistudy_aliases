@@ -1,0 +1,14 @@
+#!/bin/bash
+# HEADER =========================================================================
+# Author:       Loïc Delineau
+# Date:         16/10/2024
+# Platform :    WSL2 & Linux (Ubuntu 24.04)
+# Description:  Lists all of profistudy aliases
+
+echo ""
+echo "profistudy      - prints the name & function of all profistudy aliases"
+echo "profistudy-edit - edits dataset of profistudy"
+echo "profistudy-host - hosts local webpage displaying all data"
+echo ""
+
+

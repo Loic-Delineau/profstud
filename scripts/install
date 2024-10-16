@@ -3,7 +3,7 @@
 # Author:	Loïc Delineau
 # Date:		16/10/2024
 # Platform : 	Linux & WSL2 (Ubuntu 24.04)
-# Description: 	Installs all the necessary packages for profstud
+# Description: 	Installs all the necessary packages for profistudy
 
 # GLOBAL VARIABLES ===============================================================
 # tput setaf colours

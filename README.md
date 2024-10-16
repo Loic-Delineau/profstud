@@ -1,4 +1,4 @@
-# EPFL Profitability Study - profstud
+# EPFL Profitability Study - profistudy
 
 <p align="center">
     <img src="images/logo.png">
@@ -9,9 +9,9 @@ Loïc Delineau - October 2024
 
 ## 1. Introduction
 ### Aliases
-- `profstud` - lists all profstud commands
-- `profstud-edit` - edit profstud data
-- `profstud-host` - hosts a local interactive webpage to display all data
+- `profistudy` - lists all profistudy commands
+- `profistudy-edit` - edit profistudy data
+- `profistudy-host` - hosts a local interactive webpage to display all data
 
 
 ### Table of Content
@@ -21,14 +21,14 @@ Loïc Delineau - October 2024
 
 
 ### Description
-The profstud repo tracks all hours spent studying for a Robotics Master's degree at EPFL, tracking the estimated financial losses of each course and computing the long-term breakeven according to the estimated salary increases netted by the possesion of a Master's Degree from EPFL.  
+The profistudy repo tracks all hours spent studying for a Robotics Master's degree at EPFL, tracking the estimated financial losses of each course and computing the long-term breakeven according to the estimated salary increases netted by the possesion of a Master's Degree from EPFL.  
 
 <br>
 
 ## 2. Installation Instructions
 ### Clone the repo using HTTPS
 ```
-git clone https://github.com/loic-delineau/profstud
+git clone https://github.com/loic-delineau/profistudy
 ```
 
 ```
@@ -40,7 +40,7 @@ Make a [Personal Access Token](https://github.com/settings/tokens) if you need a
 
 ### Run once to install all dependencies
 ```
-cd profstud/scripts
+cd profistudy/scripts
 ./install
 ./install_aliases
 ```

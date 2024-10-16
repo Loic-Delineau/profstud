@@ -3,7 +3,7 @@
 # Author:	Loïc Delineau
 # Date:		16/10/2024
 # Platform : 	Linux & WSL2 (Ubuntu 24.04)
-# Description: 	Adds all of profstud's aliases to your ~/.bashrc
+# Description: 	Adds all of profistudy's aliases to your ~/.bashrc
 
 # GLOBAL VARIABLES ===============================================================
 # tput setaf colours
@@ -34,20 +34,20 @@ cd ..
 # Returns to current path
 cd $current_path
 
-# PROFSTUD =============================================================
+# PROFISTUDY =============================================================
 echo "" >> ~/.bashrc
 echo ""
-echo "profstud - prints the name & function of all profstud aliases"
-echo "# PROFSTUD ALIASES - https://github.com/loic-delineau/profstud" >> ~/.bashrc
-echo "alias profstud=\"cd $current_path && bash profstud_aliases\"" >> ~/.bashrc
+echo "profistudy - prints the name & function of all profistudy aliases"
+echo "# PROFISTUDY ALIASES - https://github.com/loic-delineau/profistudy" >> ~/.bashrc
+echo "alias profistudy=\"cd $current_path && bash profistudy_aliases\"" >> ~/.bashrc
 
-# PROFSTUD-EDIT =======================================================
-echo "profstud-edit - edits dataset of profstud"
-echo "alias profstud-edit=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
+# PROFISTUDY-EDIT =======================================================
+echo "profistudy-edit - edits dataset of profistudy"
+echo "alias profistudy-edit=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
 
-# PROFSTUD-HOST =======================================================
-echo "profstud-host - hosts local webpage displaying all data"
-echo "alias profstud-host=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
+# PROFISTUDY-HOST =======================================================
+echo "profistudy-host - hosts local webpage displaying all data"
+echo "alias profistudy-host=\"cd $current_path && echo "make it you lazy bum!" \"" >> ~/.bashrc
 echo "" >> ~/.bashrc
 
 # USER END MESSAGE ===================================================

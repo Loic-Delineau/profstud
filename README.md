@@ -42,6 +42,8 @@ Make a [Personal Access Token](https://github.com/settings/tokens) if you need a
 ```
 cd profistudy/scripts
 ./install
+```
+```
 ./install_aliases
 ```
 <br>

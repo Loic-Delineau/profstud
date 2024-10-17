@@ -75,17 +75,43 @@ echo ""
 
  
 # GENERATING GRAPH ==============================================================
-echo "Reading input.txt and generating a line graph"
-echo "Saving it as graph.png in this repo"
+# Finding class ID
+ID=""
+echo "Please enter the class ID you wish you preview:"
+
+ls ./dataset >> temp 	# doing this to display as a list
+cat temp
+rm temp 
+
+echo ""
+echo -n "> " && read ID
+echo ""
+echo "ID you requested was: $ID"
+
+# Checking ID exists
+if `ls ./dataset | grep -q $ID`; then
+	echo "File was found, generating graphs"
+else
+	echo "File was not found, exiting..."
+	exit
+fi
+
+# Generating Graphs
+echo "Saving it as graph.png in this directory"
 echo "Viewing it with wslview"
 echo ""
 
-gnuplot -e 'set terminal png; plot "input.txt" with lines' > graph.png
+gnuplot -e 'set terminal png; plot "'./dataset/$ID'" with lines' > graph.png
+
+# Viewing Graphs
 wslview graph.png
 
 echo "Success! Now Exiting..."
 echo ""
 
+
+gnuplot -e 'set terminal png; plot "data1" using 1:2 with lines title "Class Hours" lt
+7 lc 6, "data1" using 1:3 with lines title "Work Hours" lc 7' > graph.png; wslview graph.png
 
 
 

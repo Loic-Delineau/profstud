@@ -76,38 +76,35 @@ echo ""
 # GENERATING GRAPH ==============================================================
 # Finding class ID
 ID=""
-echo "Please enter the class ID you wish you preview:"
+echo "Please enter the number of the class you wish to preview:"
 
+# Putting all elements of dataset in a numbered list in a new file
 ls ./dataset >> temp 	# doing this to display as a list
-cat temp
-rm temp 
+cat -n temp
 
 echo ""
 echo -n "> " && read ID
 echo ""
-echo "ID you requested was: $ID"
 
-# Checking ID exists
-if `ls ./dataset | grep -q $ID`; then
-	echo "File was found, generating graphs"
-else
-	echo "File was not found, exiting..."
-	exit
-fi
+FILE="$(sed -n "${ID}p" temp)" 	# print ID line of file
+
+echo "File you requested is: $FILE"
+
+rm temp 
+
+echo "Generating graphs..."
 
 # Generating Graphs
-echo "Saving it as graph.png in this directory"
-echo "Viewing it with wslview"
-echo ""
-
-gnuplot -e 'set terminal png; plot "'./dataset/$ID'" with lines' > graph.png
+gnuplot -e 'set terminal png; plot "'./dataset/$FILE'" with lines' > graph.png
 
 # Viewing Graphs
 xdg-open graph.png
 # wslview graph.png  --> for wsl2
 
-echo "Success! Now Exiting..."
+echo "Success! Now Exiting"
 echo ""
+
+exit
 
 
 gnuplot -e 'set terminal png; plot "data1" using 1:2 with lines title "Class Hours" lt

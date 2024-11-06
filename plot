@@ -63,7 +63,6 @@ if `uname -r | grep -q WSL2`; then
 elif `uname -r | grep -q generic`; then
 	echo "You are running Bare Metal Linux"
 	echo "This script doesn't yet work for Linux, exiting..."
-	exit
 	OS=LINUX
 else 
 	echo "You are not running Linux, this script won't work"
@@ -104,14 +103,15 @@ echo ""
 gnuplot -e 'set terminal png; plot "'./dataset/$ID'" with lines' > graph.png
 
 # Viewing Graphs
-wslview graph.png
+xdg-open graph.png
+# wslview graph.png  --> for wsl2
 
 echo "Success! Now Exiting..."
 echo ""
 
 
 gnuplot -e 'set terminal png; plot "data1" using 1:2 with lines title "Class Hours" lt
-7 lc 6, "data1" using 1:3 with lines title "Work Hours" lc 7' > graph.png; wslview graph.png
+7 lc 6, "data1" using 1:3 with lines title "Work Hours" lc 7' > graph.png; xdg-open graph.png
 
 
 
